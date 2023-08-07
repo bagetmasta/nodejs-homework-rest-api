@@ -5,7 +5,7 @@ const validateBody = (schema) => {
     const { error } = schema.validate(req.body);
     console.log(error);
     if (error) {
-      next(HttpError(400, "missing required name field"));
+      next(new HttpError(400, "missing required name field"));
     }
     next();
   };
